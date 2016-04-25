@@ -31,7 +31,7 @@
 
 
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header page-scroll">
@@ -41,7 +41,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand page-scroll" href="#page-top"><img src="img/logo.png" alt="">Чeрнiгiвщина Спортивна</a>
+			<a class="navbar-brand page-scroll" href="#page-top"><img src="img/logo.png" alt="fund_logo" class="collapse_hide"><img src="img/logo_red.png" alt="fund_logo" class="collapse_show">Чeрнiгiвщина Спортивна</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -191,7 +191,7 @@
 					<hr class="hr-red"></he>
 				</div>
 				
-			    <div class="col-lg-5 col-sm-6">
+			    <div class="col-lg-5 col-sm-6 project_wrap">
 				    <!-- <hr class="section-heading-spacer"> -->
 				    <div class="clearfix"></div>
 				    <h2 class="section-heading"><a href="">Сходи до перемоги</a></h2>
@@ -211,7 +211,7 @@
 		<div class="container">
 
 			<div class="row">
-				<div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+				<div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6 project_wrap">
 					<!-- <hr class="section-heading-spacer"> -->
 					<div class="clearfix"></div>
 					<h2 class="section-heading"><a href="">Сходи до перемоги</a></h2>
@@ -313,17 +313,17 @@
 						<li>
 							<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
 						</li>
-						<li>
+						<!-- <li>
 							<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
 						</li>
 						<li>
 							<a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 				<div class="footer-col col-md-4">
-					<h3>Чeрнiгiвщина Спортивна</h3>
-					<p>Робимо спорт вiдкритим для кожного!</a>.</p>
+					<h3>Контакти</h3>
+					<p>+38093-999-999<br>che-sport@meta.ua</p>
 				</div>
 			</div>
 		</div>
@@ -339,7 +339,43 @@
 	</div>
 </footer>
 
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery-1.11.2.min.js"></script>	
+
+<!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
+
+<script>
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+</script>
+	
+<script>
+	$(window).scroll(function() {
+	    if ($(".navbar").offset().top > 80) {
+	        $(".navbar-fixed-top").addClass("top-nav-collapse");
+	    } else {
+	        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+	    }
+	});
+</script>
+
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>
