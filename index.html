@@ -13,7 +13,7 @@
 	<link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
 </head>
-<body>
+<body  data-spy="scroll" data-target=".navbar" data-offset="50">
 
 	<!-- header -->
 <!-- 	<header class="main-header align-center section-content">
@@ -41,7 +41,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand page-scroll" href="#page-top"><img src="img/logo.png" alt="fund_logo" class="collapse_hide"><img src="img/logo_red.png" alt="fund_logo" class="collapse_show">Чeрнiгiвщина Спортивна</a>
+			<a class="navbar-brand page-scroll" href="#page-top"><img src="img/logo.png" alt="fund_logo" class="collapse_hide"><img src="img/logo_red.png" alt="fund_logo" class="collapse_show"><span class="mobile_hide">Чeрнiгiвщина Спортивна</span></a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -293,7 +293,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="text-center">
+<footer class="text-center" id="contact">
 	<div class="footer-above">
 		<div class="container">
 			<div class="row">
@@ -332,7 +332,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					Copyright &copy; Чeрнiгiвщина Спортивна 2014
+					Copyright &copy; Чeрнiгiвщина Спортивна 2016
 				</div>
 			</div>
 		</div>
@@ -367,13 +367,35 @@
 </script>
 	
 <script>
-	$(window).scroll(function() {
-	    if ($(".navbar").offset().top > 80) {
-	        $(".navbar-fixed-top").addClass("top-nav-collapse");
-	    } else {
-	        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+	// $(window).scroll(function() {
+	//     if ($(".navbar").offset().top > 80) {
+	//         $(".navbar-fixed-top").addClass("top-nav-collapse");
+	//     } else {
+	//         $(".navbar-fixed-top").removeClass("top-nav-collapse");
+	//     }
+	// });
+	
+	$(function() {
+		if (screen.width >= 768 ) {
+			$(window).scroll(function() {
+			    if ($(".navbar").offset().top > 80) {
+			        $(".navbar-fixed-top").addClass("top-nav-collapse");
+			    } else if (screen.width >= 768 ) {
+			        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+			    }
+			});
+		} else {
+			$(".navbar-fixed-top").addClass("top-nav-collapse");
+		}
+	});
+
+	$(window).resize(function(){
+	    if (screen.width >= 768 ) { 
+	       $(".navbar-fixed-top").addClass("top-nav-collapse"); 
 	    }
 	});
+
+
 </script>
 
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>

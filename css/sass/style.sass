@@ -37,7 +37,7 @@ section
 		text-transform: uppercase
 
 nav.navbar-default 
-	background-color: #222
+	// background-color: #222
 	border-color: transparent
 	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif
 	text-transform: uppercase
@@ -49,6 +49,9 @@ nav.navbar-default
 		&:focus, &:hover 
 			text-decoration: none
 			background-color: transparent
+			color: #fff
+	.navbar-nav li > a:hover
+		border-bottom: 1px solid white
 		&:hover, &:focus, &:active, &.active 
 			// color: RGB(255, 16, 16)
 			outline: 0
@@ -71,11 +74,24 @@ nav.navbar-default
 	nav.navbar-default 
 		background-color: transparent
 		padding: 25px 0
-		-webkit-transition: padding .3s
-		-moz-transition: padding .3s
-		transition: padding .3s
+		-webkit-transition: padding .5s
+		-moz-transition: padding .5s
+		transition: padding .5s
 		border: 0
-		
+		.navbar-brand	
+			-webkit-transition: font-size .2s ease-in-out
+			-moz-transition: font-size .2s ease-in-out
+			transition: font-size .2s ease-in-out
+
+	.mobile_hide
+		display: inherit
+
+@media (min-width : 768px) and (max-width : 991px)
+	.mobile_hide
+		display: none
+	nav.navbar-default a.navbar-brand img 
+		left: -85px
+	
 .header
 	display: table
 	position: relative
@@ -144,11 +160,20 @@ section#about
 		color: #DE1B1B
 
 section#goals
+	padding-bottom: 25px
 	hr.hr-red
 		margin-top: 20px
 		margin-bottom: 40px
 		border-width: 1.9px
-	// background-color: #f8f8f8
+
+.service-box
+	margin-bottom: 50px
+
+@media (min-width : 1200px)
+	section#goals
+		padding-bottom: 75px
+	.service-box
+		margin-bottom: 0
 
 // PROJECTS SECTION
 // section#project
@@ -204,8 +229,15 @@ section#project_wrapper
 		border-bottom: 1px solid #e7e7e7
 
 section#news
-	// a.margin-right 
+	padding-bottom: 35px
+	.news-item
+		margin-bottom: 40px 
 
+@media (min-width : 1200px)
+	section#news
+		padding-bottom: 75px
+		.news-item
+			margin-bottom: 0
 
 // FOOTER
 footer 
@@ -298,10 +330,6 @@ a.btn-light
 		color: #333
 		background-color: rgba(255,255,255,0.8)
 
-// navbar collapse
-// nav.navbar-fixed-top
-// 	// top: -50px
-
 nav.navbar-default a.navbar-brand
 	img.collapse_show
 		display: none
@@ -310,22 +338,39 @@ nav.navbar-default a.navbar-brand
 	.collapse_show
 		display: none
 
-@media(min-width:768px) 
-	.navbar-custom 
-		// -webkit-transition: top .5s ease-in-out
-		// -moz-transition: top .5s ease-in-out
-		// transition: top .5s ease-in-out
-	nav.navbar-custom.top-nav-collapse
-		border-color: rgba(34,34,34,.05)
+nav.navbar-custom.top-nav-collapse
+	border-color: rgba(34,34,34,.05)
+	background-color: #fff
+	border-bottom: 1px solid rgba(34,34,34,.05)
+	padding: 6px 0
+	a.navbar-brand
+		img.collapse_show
+			display: inherit
+	.nav > li > a, .nav > li > a:focus		
+		color: #222
+		&:hover 
+			border-bottom: 1px solid red
+			padding-bottom: 14px
+	.active > a, .active > a, .active > a:focus, .active > a:hover
 		background-color: #fff
-		border-bottom: 1px solid rgba(34,34,34,.05)
-		padding: 5px 0
-		// border-bottom: 1px solid #fff
-		a.navbar-brand
-			img.collapse_show
-				display: inherit
+		border-top: 1px solid red
+		padding-top: 14px
+		color: #222
+	.navbar-brand
+		color: #4E4E4E
+		font-size: 20px
+
+@media (max-width : 768px)
+	nav.navbar-custom.top-nav-collapse
 		.nav > li > a, .nav > li > a:focus		
 			color: #222
-		.navbar-brand
-			color: #4E4E4E
-			font-size: 20px
+			&:hover 
+				border-bottom: 1px solid red
+				padding-bottom: 9px
+				// border: none
+		.nav > li.active > a, .nav > li.active > a:focus
+			color: #BD1212
+		.active > a, .active > a:focus, .active > a:hover
+			background-color: #fff
+			border: none
+			padding-top: 10px
